@@ -1,5 +1,5 @@
 # scripts/templates/card_js.py
-# JavaScript logic, card generator, dynamic caliper wrist calculator, and Lume mode
+# JavaScript logic, card generator, dynamic caliper wrist calculator, JOMW video links, and Lume mode
 
 CARD_JS = """
   <script>
@@ -160,6 +160,15 @@ CARD_JS = """
         const prosHtml = w.pros.map(p => `<li style="display: flex; gap: 0.35rem; align-items: flex-start;"><i class="fa-solid fa-check" style="color: var(--ctp-green); margin-top: 0.2rem; font-size: 0.75rem;"></i><span>${p}</span></li>`).join('');
         const consHtml = w.cons.map(c => `<li style="display: flex; gap: 0.35rem; align-items: flex-start;"><i class="fa-solid fa-xmark" style="color: var(--ctp-red); margin-top: 0.2rem; font-size: 0.75rem;"></i><span>${c}</span></li>`).join('');
 
+        const videoBtnHtml = w.jomw_video_url ? `
+          <div style="display: flex; justify-content: flex-end; margin-top: 0.4rem;">
+            <a href="${w.jomw_video_url}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem; border-radius: 4px; text-decoration: none;" title="Watch Jody's Review on YouTube">
+              <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 0.85rem;"></i>
+              <span>JOMW Video Review</span>
+            </a>
+          </div>
+        ` : '';
+
         return `
           <article class="atelier-card watch-card" style="display: flex; flex-direction: column; justify-content: space-between; position: relative;">
             <div>
@@ -252,9 +261,12 @@ CARD_JS = """
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.3rem;">${consHtml}</ul>
               </div>
 
-              <!-- JOMW Quote -->
-              <div style="background: var(--ctp-crust); padding: 0.65rem 0.85rem; border-radius: var(--radius-sm); border-left: 2px solid var(--gold-primary); font-size: 0.75rem; color: var(--ctp-subtext1); font-style: italic; margin-bottom: 1rem; line-height: 1.4;">
-                "${w.jomw_quote}"
+              <!-- JOMW Quote & Video Link -->
+              <div style="background: var(--ctp-crust); padding: 0.75rem 0.85rem; border-radius: var(--radius-sm); border-left: 2px solid var(--gold-primary); margin-bottom: 1rem;">
+                <div style="font-size: 0.75rem; color: var(--ctp-subtext1); font-style: italic; line-height: 1.4;">
+                  "${w.jomw_quote}"
+                </div>
+                ${videoBtnHtml}
               </div>
             </div>
 
