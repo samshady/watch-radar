@@ -30,7 +30,10 @@
       "Mineral glass instead of sapphire"
     ],
     "jomw_quote": "Look at that dial texture for thirty quid. Absolutely ridiculous value for money, mate.",
-    "jomw_spec_score": 9.2
+    "jomw_spec_score": 9.2,
+    "image": "assets/images/addiesdive-ad2030.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Addiesdive+AD2030+Sand+Wave",
+    "buy_url_alt": "https://www.amazon.de/s?k=Addiesdive+AD2030+Sand+Wave"
   },
   {
     "id": "steeldive-sd1970",
@@ -63,7 +66,10 @@
       "Milled clasp can feel slightly chunky under sleeves"
     ],
     "jomw_quote": "A 200 meter diver with a ceramic bezel, sapphire crystal, and an NH35 for sixty bucks? Just buy one.",
-    "jomw_spec_score": 9.6
+    "jomw_spec_score": 9.6,
+    "image": "assets/images/steeldive-sd1970.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Steeldive+SD1970+Captain+Willard",
+    "buy_url_alt": "https://www.amazon.de/s?k=Steeldive+SD1970+Captain+Willard"
   },
   {
     "id": "steeldive-sd1953",
@@ -96,7 +102,10 @@
       "Date cyclops magnification can have slight optical distortion"
     ],
     "jomw_quote": "Probably the best sixty dollar Submariner homage on the entire internet.",
-    "jomw_spec_score": 9.3
+    "jomw_spec_score": 9.3,
+    "image": "assets/images/steeldive-sd1953.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Steeldive+SD1953+Submariner+Classic",
+    "buy_url_alt": "https://www.amazon.de/s?k=Steeldive+SD1953+Submariner+Classic"
   },
   {
     "id": "escapement-time-35mm-ks",
@@ -129,7 +138,10 @@
       "Stock sells out rapidly during AliExpress sales"
     ],
     "jomw_quote": "Escapement Time proves you do not need to spend four figures to get clean Japanese dress watch elegance.",
-    "jomw_spec_score": 9.5
+    "jomw_spec_score": 9.5,
+    "image": "assets/images/escapement-time-35mm-ks.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Escapement+Time+35mm+King+Elegance",
+    "buy_url_alt": "https://www.amazon.de/s?k=Escapement+Time+35mm+King+Elegance"
   },
   {
     "id": "berny-t2566m-titanium",
@@ -162,7 +174,10 @@
       "Stock canvas strap is utilitarian rather than luxurious"
     ],
     "jomw_quote": "A sapphire and titanium field watch for forty quid? Berny are having a laugh. Unbelievable.",
-    "jomw_spec_score": 9.4
+    "jomw_spec_score": 9.4,
+    "image": "assets/images/berny-t2566m-titanium.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Berny+T2566M+Titanium+Field",
+    "buy_url_alt": "https://www.amazon.de/s?k=Berny+T2566M+Titanium+Field"
   },
   {
     "id": "militado-ml05-field",
@@ -195,7 +210,10 @@
       "Lacks a metal bracelet option"
     ],
     "jomw_quote": "Everything you want in a beater field watch without the mechanical servicing headache.",
-    "jomw_spec_score": 9.1
+    "jomw_spec_score": 9.1,
+    "image": "assets/images/militado-ml05-field.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Militado+ML05+Dirty+Dozen+Homage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Militado+ML05+Dirty+Dozen+Homage"
   },
   {
     "id": "pagani-design-pd1701",
@@ -228,7 +246,10 @@
       "Lume fades faster than Steeldive or Addiesdive"
     ],
     "jomw_quote": "The Moonwatch look for one percent of the Omega price tag. An absolute staple of Ali.",
-    "jomw_spec_score": 9.0
+    "jomw_spec_score": 9.0,
+    "image": "assets/images/pagani-design-pd1701.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Pagani+Design+PD-1701+Moonwatch+Homage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Pagani+Design+PD-1701+Moonwatch+Homage"
   },
   {
     "id": "pagani-design-pd1644",
@@ -261,7 +282,10 @@
       "Male endlinks extend effective wrist footprint"
     ],
     "jomw_quote": "Crisp ceramic bezel, sapphire crystal, and Seiko meca-quartz precision for fifty-odd euros.",
-    "jomw_spec_score": 8.8
+    "jomw_spec_score": 8.8,
+    "image": "assets/images/pagani-design-pd1644.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Pagani+Design+PD-1644+Daytona+Racing",
+    "buy_url_alt": "https://www.amazon.de/s?k=Pagani+Design+PD-1644+Daytona+Racing"
   },
   {
     "id": "tandorio-36mm-flieger",
@@ -294,7 +318,10 @@
       "Supplied leather strap is relatively basic"
     ],
     "jomw_quote": "A 36 millimeter pilot watch with an automatic NH35 and sapphire for under fifty quid. What a little gem.",
-    "jomw_spec_score": 9.2
+    "jomw_spec_score": 9.2,
+    "image": "assets/images/tandorio-36mm-flieger.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+36mm+Sterile+Pilot+Type+A",
+    "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+36mm+Sterile+Pilot+Type+A"
   },
   {
     "id": "tandorio-37mm-skx013",
@@ -327,7 +354,10 @@
       "Bezel alignment can occasionally be half a millimeter off"
     ],
     "jomw_quote": "If you have skinnier wrists and missed the discontinued SKX013, Tandorio has you covered for pennies.",
-    "jomw_spec_score": 9.1
+    "jomw_spec_score": 9.1,
+    "image": "assets/images/tandorio-37mm-skx013.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+37mm+SKX013+Diver+Homage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+37mm+SKX013+Diver+Homage"
   },
   {
     "id": "sanda-1108-tank",
@@ -360,7 +390,10 @@
       "Basic splash water resistance only"
     ],
     "jomw_quote": "Ten dollars for a watch that looks like a five-thousand-dollar Cartier Tank? Go on then, you beauty.",
-    "jomw_spec_score": 8.7
+    "jomw_spec_score": 8.7,
+    "image": "assets/images/sanda-1108-tank.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Sanda+1108+Tank+Louis+Homage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Sanda+1108+Tank+Louis+Homage"
   },
   {
     "id": "casio-duro-mdv107",
@@ -393,7 +426,10 @@
       "Mineral glass can accumulate scratches in heavy outdoor abuse"
     ],
     "jomw_quote": "The Duro is an absolute rite of passage for every watch collector on earth.",
-    "jomw_spec_score": 9.0
+    "jomw_spec_score": 9.0,
+    "image": "assets/images/casio-duro-mdv107.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+Duro+MDV-107+Marlin+Heritage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Casio+Duro+MDV-107+Marlin+Heritage"
   },
   {
     "id": "casio-a168wa",
@@ -426,7 +462,10 @@
       "Folded link bracelet can nip arm hair if worn too loose"
     ],
     "jomw_quote": "Twenty-five quid, pure eighties synthwave nostalgia, and that brilliant turquoise glow. God tier, mate.",
-    "jomw_spec_score": 9.5
+    "jomw_spec_score": 9.5,
+    "image": "assets/images/casio-a168wa.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+A168WA+Illuminator+Vintage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Casio+A168WA+Illuminator+Vintage"
   },
   {
     "id": "casio-ltp-v007l",
@@ -459,7 +498,10 @@
       "Mineral crystal"
     ],
     "jomw_quote": "A subtle, understated retro dress piece that punches way above its price point.",
-    "jomw_spec_score": 8.6
+    "jomw_spec_score": 8.6,
+    "image": "assets/images/casio-ltp-v007l.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+LTP-V007L+Mini+Tank",
+    "buy_url_alt": "https://www.amazon.de/s?k=Casio+LTP-V007L+Mini+Tank"
   },
   {
     "id": "burei-classic-date",
@@ -492,7 +534,10 @@
       "Milanese mesh clasp needs firm finger pressure to snap closed"
     ],
     "jomw_quote": "You get sapphire glass and Japanese quartz for thirty bucks. Hard to complain about that math.",
-    "jomw_spec_score": 8.5
+    "jomw_spec_score": 8.5,
+    "image": "assets/images/burei-classic-date.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Burei+Minimalist+Date+Classic",
+    "buy_url_alt": "https://www.amazon.de/s?k=Burei+Minimalist+Date+Classic"
   },
   {
     "id": "merkur-pierre-paulin-sector",
@@ -525,7 +570,10 @@
       "K1 mineral glass requires care to avoid deep scrapes"
     ],
     "jomw_quote": "That salmon dial under afternoon sunlight looks like something out of a Geneva auction catalogue.",
-    "jomw_spec_score": 9.4
+    "jomw_spec_score": 9.4,
+    "image": "assets/images/merkur-pierre-paulin-sector.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Pierre+Paulin+Vintage+Sector+Salmon+Dial",
+    "buy_url_alt": "https://www.amazon.de/s?k=Pierre+Paulin+Vintage+Sector+Salmon+Dial"
   },
   {
     "id": "sugess-celestial-heritage",
@@ -558,7 +606,10 @@
       "Deployant clasp is bulky on very thin wrists"
     ],
     "jomw_quote": "A true mechanical moonphase with a sapphire crystal for under eighty euros on 11.11 is madness.",
-    "jomw_spec_score": 9.3
+    "jomw_spec_score": 9.3,
+    "image": "assets/images/sugess-celestial-heritage.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Sugess+Moonphase+Master+Heritage",
+    "buy_url_alt": "https://www.amazon.de/s?k=Sugess+Moonphase+Master+Heritage"
   },
   {
     "id": "lige-8936-racing-chrono",
@@ -591,7 +642,10 @@
       "Subdial hands can be slightly misaligned by a fraction of a millimetre"
     ],
     "jomw_quote": "For fifteen quid, wear it, scratch it, use it when painting the shed, and never look back.",
-    "jomw_spec_score": 7.6
+    "jomw_spec_score": 7.6,
+    "image": "assets/images/lige-8936-racing-chrono.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Lige+8936+Phantom+Racing+Chrono",
+    "buy_url_alt": "https://www.amazon.de/s?k=Lige+8936+Phantom+Racing+Chrono"
   },
   {
     "id": "addiesdive-ad2023-explorer",
@@ -624,7 +678,10 @@
       "Quirky Addiesdive diver logo on an otherwise classic dress-tool dial"
     ],
     "jomw_quote": "Thirty-six millimetres, sapphire, BGW9 lume, sweeping quartz, fifty quid. The ultimate daily beater.",
-    "jomw_spec_score": 9.5
+    "jomw_spec_score": 9.5,
+    "image": "assets/images/addiesdive-ad2023-explorer.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Addiesdive+AD2023+Explorer+36",
+    "buy_url_alt": "https://www.amazon.de/s?k=Addiesdive+AD2023+Explorer+36"
   },
   {
     "id": "addiesdive-ad2105-puck-diver",
@@ -657,6 +714,9 @@
       "Polarizing tool-watch aesthetic not suited for formal attire"
     ],
     "jomw_quote": "A lugless diver is the cheat code for guys with smaller wrists who still want big dive presence.",
-    "jomw_spec_score": 9.1
+    "jomw_spec_score": 9.1,
+    "image": "assets/images/addiesdive-ad2105-puck-diver.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Addiesdive+AD2105+Deep+Puck+Diver",
+    "buy_url_alt": "https://www.amazon.de/s?k=Addiesdive+AD2105+Deep+Puck+Diver"
   }
 ]
