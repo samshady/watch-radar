@@ -38,6 +38,19 @@ def main():
     with open(ROOT_HTML, "w", encoding="utf-8") as f:
         f.write(full_html)
 
+    import shutil
+    favicon_src = os.path.join(BASE_DIR, "favicon.svg")
+    favicon_dst = os.path.join(DIST_DIR, "favicon.svg")
+    if os.path.exists(favicon_src):
+        shutil.copyfile(favicon_src, favicon_dst)
+
+    assets_src = os.path.join(BASE_DIR, "assets")
+    assets_dst = os.path.join(DIST_DIR, "assets")
+    if os.path.exists(assets_src):
+        if os.path.exists(assets_dst):
+            shutil.rmtree(assets_dst)
+        shutil.copytree(assets_src, assets_dst)
+
     print(f"SUCCESS: Built {len(watches)} watches into {DIST_HTML} and {ROOT_HTML}")
 
 if __name__ == "__main__":

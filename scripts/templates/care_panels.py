@@ -1,5 +1,5 @@
 # scripts/templates/care_panels.py
-# 4 Care & Toolkit panels and clean footer for Watch Radar
+# Aesthetic, modular Care & Toolkit panels and clean footer for Watch Radar
 
 CARE_PANELS_HTML = """
     <!-- CARE LAB & TOOLKIT PANELS -->
@@ -13,7 +13,7 @@ CARE_PANELS_HTML = """
           Care, Storage &amp; Toolkit Manual
         </h2>
         <p style="color: var(--ctp-subtext0); font-size: 0.95rem; margin-top: 0.25rem; max-width: 720px;">
-          Tested guidance for maintaining budget automatics, sizing bracelets for small wrists without scratching links, and protecting movements from everyday hazards.
+          Bite-sized field rules for maintaining budget calibers, sizing bracelets for small wrists without scratching links, and essential bench tools.
         </p>
       </div>
 
@@ -25,72 +25,112 @@ CARE_PANELS_HTML = """
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-peach); text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
                 <i class="fa-solid fa-gear"></i> Caliber Safety
               </span>
-              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Part I</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Module 01</span>
             </div>
-            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 0.75rem;">
-              Movement Care &amp; Safety Protocol
+            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">
+              Movement Protocol
             </h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--ctp-subtext1);">
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-triangle-exclamation" style="color: var(--ctp-red); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">The Date Change Danger Zone:</strong> Never quickset the date between 21:00 (9 PM) and 03:00 (3 AM) on Seiko NH35 or PT5000 calibers. The date-change gears are actively engaged. Manually advance hands past midnight first.
+
+            <!-- Mini Widgets -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(243, 139, 168, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-red); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Danger Zone
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-red); background: rgba(243, 139, 168, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">21:00 to 03:00</span>
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-magnet" style="color: var(--ctp-yellow); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Demagnetization in 5 Seconds:</strong> If an automatic suddenly runs 45 seconds fast per day, laptop speakers or iPad smart covers magnetized the hairspring. Test with a compass app, then clear it with an eight euro blue coil demagnetizer.
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Intermediate date gears are meshed. Never quickset date during these hours. Advance hands past midnight first.
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-droplet" style="color: var(--ctp-blue); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Water Resistance Reality:</strong> 50m means light surface swimming only. For swimming confidence, choose 100m or 200m watches with a screw-down crown like the Steeldive SD1970.
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(249, 226, 175, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-yellow); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-magnet"></i> Magnetism
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-yellow); background: rgba(249, 226, 175, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">+45s/day Spike</span>
                 </div>
-              </li>
-            </ul>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Sudden massive gain signals magnetized hairspring. Test with phone compass app; clear with blue coil demagnetizer.
+                </div>
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(137, 180, 250, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-blue); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-droplet"></i> Water Seal
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-blue); background: rgba(137, 180, 250, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">100m+ Screw Crown</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  30m is splash only. For confident lap swimming, choose 100m or 200m ratings with threaded crown.
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-primary);">
-            Rule of thumb: Hand-wind 15 turns to start, never shake violently.
+          <div style="margin-top: 1.25rem; padding-top: 0.85rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--gold-primary); display: flex; justify-content: space-between;">
+            <span>Initial Wind:</span>
+            <span style="font-weight: 700;">15 to 20 gentle turns</span>
           </div>
         </article>
 
-        <!-- PANEL 2: STORAGE & TRAVEL ROLLS -->
+        <!-- PANEL 2: STORAGE & ROLLS -->
         <article class="atelier-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-green); text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
                 <i class="fa-solid fa-box-archive"></i> Storage
               </span>
-              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Part II</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Module 02</span>
             </div>
-            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 0.75rem;">
-              Small-Wrist Watch Boxes &amp; Rolls
+            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">
+              Small-Wrist Storage
             </h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--ctp-subtext1);">
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-compress" style="color: var(--ctp-green); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">The Stiff Cushion Trap:</strong> Standard Chinese watch box pillows measure 18 to 20 cm in circumference. Forcing a bracelet sized for a 16 cm wrist over them stretches clasp springs.
+
+            <!-- Mini Widgets -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(166, 227, 161, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-green); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-compress"></i> Cushion Fit
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-green); background: rgba(166, 227, 161, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">&le; 15.5 cm Pillows</span>
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-gem" style="color: var(--gold-primary); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Slide-Rail M-Cushions:</strong> Look for travel rolls with hexagonal snap rails or M-shaped compressible pillows that compress down to 14.5 cm without strain.
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Standard 19cm cushions stretch bracelets sized for 16cm wrists. Pick compressible M-cushions.
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-cloud" style="color: var(--ctp-lavender); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Moisture Protection:</strong> Keep one dry silica gel packet inside your 3-watch roll. Avoid storing mechanical watches in high-humidity bathrooms.
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(238, 212, 159, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-shield-halved"></i> Slide Rails
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); background: var(--gold-bg); padding: 0.15rem 0.4rem; border-radius: 4px;">Flank Protection</span>
                 </div>
-              </li>
-            </ul>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Hexagonal travel rolls with grooved partitions stop steel crowns from rubbing adjoining watch flanks.
+                </div>
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(180, 190, 254, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-lavender); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-cloud"></i> Humidity
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-lavender); background: rgba(180, 190, 254, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">Silica Gel Pack</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Add one dry silica sachet per box slot. Keep timepieces out of humid bathroom environments.
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-green);">
-            Recommended: Hexagonal 3-slot travel roll with slide-in dividers.
+          <div style="margin-top: 1.25rem; padding-top: 0.85rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-green); display: flex; justify-content: space-between;">
+            <span>Ideal Format:</span>
+            <span style="font-weight: 700;">3-slot hexagonal travel roll</span>
           </div>
         </article>
 
@@ -101,34 +141,54 @@ CARE_PANELS_HTML = """
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-sapphire); text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
                 <i class="fa-solid fa-link"></i> Customization
               </span>
-              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Part III</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Module 03</span>
             </div>
-            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 0.75rem;">
-              Strap Swapping Masterclass
+            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">
+              Strap Masterclass
             </h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--ctp-subtext1);">
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-circle-check" style="color: var(--ctp-sapphire); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">FKM Waffle &amp; Tropic Rubber:</strong> Standard silicone collects pocket lint. Fluoroelastomer (FKM) rubber is lint-free, chemical resistant, and curves naturally around smaller wrists.
+
+            <!-- Mini Widgets -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(116, 199, 236, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-sapphire); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-water"></i> FKM Waffle
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-sapphire); background: rgba(116, 199, 236, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">Zero Lint</span>
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-parachute-box" style="color: var(--ctp-mauve); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Marine Nationale Parachute Webbing:</strong> Elastic French parachute straps have zero pin holes. They adjust by millimeter increments and sit flat without stiff buckle gaps.
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Fluoroelastomer rubber curves smoothly over small wrists without silicone lint accumulation.
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-triangle-exclamation" style="color: var(--ctp-yellow); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Watch Lug Widths:</strong> 20mm is the universal sweet spot. Watch out for 19mm odd lug widths (like the Escapement Time 35mm) which require dedicated 19mm straps.
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(203, 166, 247, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-mauve); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-parachute-box"></i> Parachute
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-mauve); background: rgba(203, 166, 247, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">Infinite Micro-Fit</span>
                 </div>
-              </li>
-            </ul>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Marine Nationale elastic webbing has zero punched holes. Sits flush without stiff buckle gaps.
+                </div>
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(249, 226, 175, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-yellow); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-circle-exclamation"></i> Odd Lug Width
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-yellow); background: rgba(249, 226, 175, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">19mm Check</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Escapement Time 35mm uses 19mm lugs. Forcing 20mm leather scuffs edges; order true 19mm straps.
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-sapphire);">
-            Quick-release spring bars save your lugs from scratches.
+          <div style="margin-top: 1.25rem; padding-top: 0.85rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-sapphire); display: flex; justify-content: space-between;">
+            <span>Hardware Tip:</span>
+            <span style="font-weight: 700;">Use quick-release spring bars</span>
           </div>
         </article>
 
@@ -139,34 +199,54 @@ CARE_PANELS_HTML = """
               <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-maroon); text-transform: uppercase; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
                 <i class="fa-solid fa-toolbox"></i> Workbench
               </span>
-              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Part IV</span>
+              <span style="font-size: 0.75rem; font-family: var(--font-mono); color: var(--ctp-overlay1);">Module 04</span>
             </div>
-            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 0.75rem;">
-              Essential Mod &amp; Sizing Kit
+            <h3 style="font-family: var(--font-display); font-size: 1.2rem; color: #fff; margin-bottom: 1rem;">
+              Mod &amp; Sizing Kit
             </h3>
-            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; color: var(--ctp-subtext1);">
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-hammer" style="color: var(--ctp-maroon); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Pin Punch Block &amp; Brass Hammer:</strong> Do not use cheap plastic twist pushers on stubborn split pins. A slotted plastic holder and brass hammer give clean, controlled link removal.
+
+            <!-- Mini Widgets -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(235, 160, 172, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-maroon); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-hammer"></i> Pin Removal
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-maroon); background: rgba(235, 160, 172, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">Brass Mallet</span>
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-screwdriver" style="color: var(--gold-primary); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Hollow-Ground Screwdrivers:</strong> For San Martin or Pagani screwed links, use 1.2mm or 1.4mm hollow-ground blades. Wedge tips will cam out and mar screw slots.
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Use a slotted block and brass mallet along stamped link arrows. Twist pushers bend easily.
                 </div>
-              </li>
-              <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-                <i class="fa-solid fa-gem" style="color: var(--ctp-sky); margin-top: 0.2rem; shrink-0;"></i>
-                <div>
-                  <strong style="color: #fff;">Diamond Selector II Tester:</strong> A ten euro thermal conductivity gem tester confirms genuine sapphire crystal versus mineral glass in two seconds.
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(238, 212, 159, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-screwdriver"></i> Screwed Links
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--gold-primary); background: var(--gold-bg); padding: 0.15rem 0.4rem; border-radius: 4px;">1.2mm Hollow-Ground</span>
                 </div>
-              </li>
-            </ul>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Parallel ground blades grip full slot walls. Standard wedge tips cam out and scratch link flanks.
+                </div>
+              </div>
+
+              <div style="background: var(--ctp-crust); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid rgba(137, 220, 235, 0.2);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-sky); font-weight: 700; text-transform: uppercase; display: flex; align-items: center; gap: 0.3rem;">
+                    <i class="fa-solid fa-gem"></i> Sapphire Check
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--ctp-sky); background: rgba(137, 220, 235, 0.1); padding: 0.15rem 0.4rem; border-radius: 4px;">Diamond Selector II</span>
+                </div>
+                <div style="font-size: 0.8rem; color: var(--ctp-subtext1); line-height: 1.4;">
+                  Thermal conductivity probe confirms genuine corundum sapphire crystal versus mineral glass in 2 seconds.
+                </div>
+              </div>
+            </div>
           </div>
-          <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-maroon);">
-            Silicon 7000 grease keeps caseback O-rings pliable and waterproof.
+          <div style="margin-top: 1.25rem; padding-top: 0.85rem; border-top: 1px solid var(--ctp-surface0); font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-maroon); display: flex; justify-content: space-between;">
+            <span>Gasket Care:</span>
+            <span style="font-weight: 700;">Silicon 7000 grease</span>
           </div>
         </article>
       </div>
