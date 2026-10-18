@@ -1,5 +1,5 @@
 # scripts/templates/card_js.py
-# JavaScript logic, card generator, dynamic caliper wrist calculator, JOMW video links, and Lume mode
+# JavaScript logic, card generator, dynamic caliper wrist calculator, JOMW video links, UV Lume mode, and Escapement Simulator
 
 CARD_JS = """
   <script>
@@ -32,22 +32,23 @@ CARD_JS = """
       return (circumferenceCm * 10 * 0.285).toFixed(1);
     }
 
-    // Lume Darkroom Mode Toggle
+    // 365nm UV Torch Excitation Strobe for Lume Mode (Zero Party Confetti)
     let lumeActive = false;
     lumeToggleBtn.addEventListener('click', () => {
       lumeActive = !lumeActive;
       document.body.classList.toggle('lume-mode', lumeActive);
+      
       if (lumeActive) {
-        lumeBtnText.textContent = 'Lume Darkroom: ON';
+        lumeBtnText.textContent = 'Lume Darkroom: ACTIVE';
         lumeBtnText.style.color = 'var(--lume-bgw9)';
-        if (typeof confetti === 'function') {
-          confetti({
-            particleCount: 35,
-            spread: 50,
-            origin: { y: 0.15 },
-            colors: ['#00e5ff', '#39ff14', '#eed49f']
-          });
-        }
+        
+        // Spawn 365nm UV beam sweep
+        const uvBeam = document.createElement('div');
+        uvBeam.className = 'uv-strobe-overlay';
+        document.body.appendChild(uvBeam);
+        setTimeout(() => {
+          if (uvBeam.parentNode) uvBeam.parentNode.removeChild(uvBeam);
+        }, 900);
       } else {
         lumeBtnText.textContent = 'Lume Darkroom: OFF';
         lumeBtnText.style.color = '';
@@ -94,6 +95,72 @@ CARD_JS = """
       });
     });
 
+    // ==========================================
+    // ESCAPEMENT & BEAT RATE ENGINE
+    // ==========================================
+    let currentBps = 6; // Default: Seiko NH35 (6 beats per second / 21,600 bph)
+    const escapementHandPivot = document.getElementById('escapement-hand-pivot');
+    const balanceWheelAnim = document.getElementById('balance-wheel-anim');
+    const cadenceReadout = document.getElementById('cadence-readout');
+    const escapementInfo = document.getElementById('escapement-info');
+    const escapementButtons = document.querySelectorAll('.escapement-btn');
+
+    escapementButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        escapementButtons.forEach(b => {
+          b.classList.remove('active');
+          b.style.background = 'var(--ctp-surface0)';
+          b.style.borderColor = 'var(--ctp-surface1)';
+          const nameSpan = b.querySelector('span:first-child');
+          const subSpan = b.querySelector('span:last-child');
+          if (nameSpan) nameSpan.style.color = '#fff';
+          if (subSpan) subSpan.style.color = 'var(--ctp-subtext0)';
+        });
+
+        btn.classList.add('active');
+        btn.style.background = 'var(--gold-bg)';
+        btn.style.borderColor = 'var(--gold-border)';
+        const activeSub = btn.querySelector('span:last-child');
+        if (activeSub) activeSub.style.color = 'var(--gold-primary)';
+
+        currentBps = parseInt(btn.getAttribute('data-bps'), 10);
+        const name = btn.getAttribute('data-name');
+        const desc = btn.getAttribute('data-desc');
+        
+        cadenceReadout.textContent = `${currentBps} TICK${currentBps > 1 ? 'S' : ''} / SEC`;
+        escapementInfo.textContent = desc;
+      });
+    });
+
+    // High Precision Animation Loop for Escapement Second Hand & Balance Wheel
+    function animateEscapement() {
+      const now = performance.now();
+      
+      // Step-quantized second hand rotation
+      const totalStepsPerMin = currentBps * 60;
+      const stepIntervalMs = 1000 / currentBps;
+      const currentStep = Math.floor((now % 60000) / stepIntervalMs);
+      const angle = (currentStep / totalStepsPerMin) * 360;
+      
+      if (escapementHandPivot) {
+        escapementHandPivot.style.transform = `rotate(${angle.toFixed(2)}deg)`;
+      }
+
+      // Balance wheel hairspring oscillation: 35 degree amplitude
+      // Frequency matches Hz: currentBps / 2 cycles per sec (since 2 ticks = 1 full oscillation)
+      const oscFreq = (currentBps / 2) * (2 * Math.PI / 1000);
+      const balanceAngle = Math.sin(now * oscFreq) * 36;
+      if (balanceWheelAnim) {
+        balanceWheelAnim.style.transform = `rotate(${balanceAngle.toFixed(1)}deg)`;
+      }
+
+      requestAnimationFrame(animateEscapement);
+    }
+    requestAnimationFrame(animateEscapement);
+
+    // ==========================================
+    // WATCH GRID RENDERER
+    // ==========================================
     function renderWatches() {
       const query = searchInput.value.toLowerCase().trim();
       const archetype = archetypeFilter.value;
@@ -162,8 +229,8 @@ CARD_JS = """
 
         const videoBtnHtml = w.jomw_video_url ? `
           <div style="display: flex; justify-content: flex-end; margin-top: 0.4rem;">
-            <a href="${w.jomw_video_url}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: inline-flex; align-items: center; gap: 0.4rem; background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; padding: 0.25rem 0.55rem; border-radius: 4px; text-decoration: none;" title="Watch Jody's Review on YouTube">
-              <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 0.85rem;"></i>
+            <a href="${w.jomw_video_url}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: inline-flex; align-items: center; gap: 0.45rem; background: rgba(239, 68, 68, 0.12); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; padding: 0.4rem 0.75rem; border-radius: var(--radius-sm); text-decoration: none; min-height: 44px; box-sizing: border-box;" title="Watch Jody's Review on YouTube">
+              <i class="fa-brands fa-youtube" style="color: #ef4444; font-size: 0.95rem;"></i>
               <span>JOMW Video Review</span>
             </a>
           </div>
@@ -172,33 +239,33 @@ CARD_JS = """
         return `
           <article class="atelier-card watch-card" style="display: flex; flex-direction: column; justify-content: space-between; position: relative;">
             <div>
-              <!-- Image & Top Header -->
-              <div style="position: relative; margin: -1.25rem -1.25rem 1rem -1.25rem; border-top-left-radius: var(--radius-lg); border-top-right-radius: var(--radius-lg); overflow: hidden; background: #11111b; aspect-ratio: 16/10; border-bottom: 1px solid var(--ctp-surface0);">
-                <img src="${w.image}" alt="${w.brand} ${w.model}" class="watch-thumb-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+              <!-- Image & Top Header with Dynamic Sunburst Sheen -->
+              <div class="watch-card-media" style="margin: -1.25rem -1.25rem 1rem -1.25rem; border-top-left-radius: var(--radius-lg); border-top-right-radius: var(--radius-lg);">
+                <img src="${w.image}" alt="${w.brand} ${w.model}" class="watch-thumb-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                 
-                <div style="position: absolute; top: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap;">
-                  <span style="background: rgba(17, 17, 27, 0.85); backdrop-filter: blur(4px); border: 1px solid var(--gold-border); color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; text-transform: uppercase;">
+                <div style="position: absolute; top: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; z-index: 2;">
+                  <span style="background: rgba(17, 17, 27, 0.88); backdrop-filter: blur(6px); border: 1px solid var(--gold-border); color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.55rem; border-radius: 4px; text-transform: uppercase;">
                     ${w.brand}
                   </span>
-                  <span style="background: rgba(17, 17, 27, 0.85); backdrop-filter: blur(4px); border: 1px solid var(--ctp-surface1); color: var(--ctp-subtext1); font-family: var(--font-mono); font-size: 0.7rem; padding: 0.2rem 0.5rem; border-radius: 4px;">
+                  <span style="background: rgba(17, 17, 27, 0.88); backdrop-filter: blur(6px); border: 1px solid var(--ctp-surface1); color: var(--ctp-subtext1); font-family: var(--font-mono); font-size: 0.7rem; padding: 0.25rem 0.55rem; border-radius: 4px;">
                     ${w.archetype}
                   </span>
                 </div>
 
-                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(17, 17, 27, 0.9); backdrop-filter: blur(4px); border: 1px solid var(--gold-border); border-radius: 8px; padding: 0.25rem 0.55rem; text-align: center;">
+                <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(17, 17, 27, 0.92); backdrop-filter: blur(6px); border: 1px solid var(--gold-border); border-radius: 8px; padding: 0.3rem 0.6rem; text-align: center; z-index: 2;">
                   <div style="font-size: 0.55rem; font-family: var(--font-mono); color: var(--gold-primary); text-transform: uppercase; font-weight: 700;">JOMW</div>
-                  <div style="font-size: 0.95rem; font-family: var(--font-mono); font-weight: 800; color: #fff;">${w.jomw_spec_score}</div>
+                  <div style="font-size: 1rem; font-family: var(--font-mono); font-weight: 800; color: #fff;">${w.jomw_spec_score}</div>
                 </div>
               </div>
 
               <!-- Title & Model -->
-              <div style="margin-bottom: 1rem;">
+              <div style="margin-bottom: 0.85rem;">
                 <h3 style="font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.25;">
                   ${w.model}
                 </h3>
               </div>
 
-              <!-- Micrometer Specs Matrix -->
+              <!-- Caliper Specs Matrix -->
               <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4rem; background: var(--ctp-crust); padding: 0.65rem; border-radius: var(--radius-md); border: 1px solid var(--ctp-surface0); margin-bottom: 0.85rem; text-align: center;">
                 <div>
                   <div style="font-size: 0.65rem; font-family: var(--font-mono); color: var(--ctp-overlay1); text-transform: uppercase;">Diameter</div>
@@ -218,7 +285,7 @@ CARD_JS = """
                 </div>
               </div>
 
-              <!-- Dynamic Wrist Caliper Assessment -->
+              <!-- Anatomical Wrist Silhouette Assessment -->
               <div style="padding: 0.65rem 0.85rem; border-radius: var(--radius-md); border: 1px solid; margin-bottom: 0.85rem; font-size: 0.75rem; font-family: var(--font-mono); ${fitClass}">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.2rem;">
                   <span style="font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;">
@@ -231,7 +298,7 @@ CARD_JS = """
                 </div>
               </div>
 
-              <!-- Technical Specifications -->
+              <!-- Technical Caliber & Build Specifications -->
               <div style="background: var(--ctp-surface0); padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--ctp-surface1); margin-bottom: 0.85rem; font-size: 0.75rem; font-family: var(--font-mono); display: flex; flex-direction: column; gap: 0.35rem;">
                 <div style="display: flex; justify-content: space-between;">
                   <span style="color: var(--ctp-overlay1);">Caliber Engine:</span>
@@ -270,7 +337,7 @@ CARD_JS = """
               </div>
             </div>
 
-            <!-- Footer Price & Buy Links -->
+            <!-- Footer Price & Buy Links with >=44px Touch Targets -->
             <div style="padding-top: 0.85rem; border-top: 1px solid var(--ctp-surface0);">
               <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0.85rem;">
                 <div>
@@ -286,13 +353,13 @@ CARD_JS = """
                 </div>
               </div>
 
-              <!-- Buy Action Buttons -->
+              <!-- Buy Action Buttons with >=44px Touch Targets -->
               <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 0.5rem;">
-                <a href="${w.buy_url_aliexpress}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--gold-primary); color: #11111b; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--gold-hover);">
+                <a href="${w.buy_url_aliexpress}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--gold-primary); color: #11111b; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--gold-hover); min-height: 44px; box-sizing: border-box;">
                   <i class="fa-solid fa-cart-shopping"></i>
                   <span>Ali Choice</span>
                 </a>
-                <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1);">
+                <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1); min-height: 44px; box-sizing: border-box;">
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                   <span>Amazon/Alt</span>
                 </a>
@@ -301,6 +368,17 @@ CARD_JS = """
           </article>
         `;
       }).join('');
+
+      // Wire up dynamic sunburst sheen listeners on all watch card media containers
+      document.querySelectorAll('.watch-card-media').forEach(media => {
+        media.addEventListener('mousemove', (e) => {
+          const rect = media.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          media.style.setProperty('--sheen-x', `${x}%`);
+          media.style.setProperty('--sheen-y', `${y}%`);
+        });
+      });
     }
 
     // Initial render
