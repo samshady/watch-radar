@@ -243,9 +243,9 @@ NAV_HEADER_HTML = """
         <div>
           <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-subtext0); margin-bottom: 0.35rem; text-transform: uppercase;">
             <span>Max Lug-To-Lug</span>
-            <span id="l2l-slider-display" style="color: var(--gold-primary); font-weight: 700;">48.5 mm</span>
+            <span id="l2l-slider-display" style="color: var(--gold-primary); font-weight: 700;">49.5 mm</span>
           </div>
-          <input type="range" id="l2l-filter-slider" min="39.0" max="49.0" step="0.5" value="48.5" style="width: 100%; accent-color: var(--gold-primary); cursor: pointer; height: 10px;">
+          <input type="range" id="l2l-filter-slider" min="38.0" max="50.0" step="0.5" value="49.5" style="width: 100%; accent-color: var(--gold-primary); cursor: pointer; height: 10px;">
           <div class="vernier-scale"></div>
         </div>
       </div>

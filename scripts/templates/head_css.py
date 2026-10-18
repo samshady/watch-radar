@@ -145,8 +145,15 @@ HEAD_CSS = """<!DOCTYPE html>
       text-shadow: 0 0 10px rgba(57, 255, 20, 0.8), 0 0 22px rgba(57, 255, 20, 0.45);
     }
 
-    body.lume-mode .watch-thumb-img {
-      filter: brightness(0.95) contrast(1.15) drop-shadow(0 0 14px rgba(0, 229, 255, 0.35));
+    .watch-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s ease;
+    }
+
+    body.lume-mode .watch-card-media {
+      background: #060609;
     }
 
     /* 365nm UV Torch Charge Strobe Animation */
@@ -185,20 +192,38 @@ HEAD_CSS = """<!DOCTYPE html>
     }
 
     /* Hyper-excited Phosphorescence with realistic exponential decay */
-    @keyframes phosphorescentDecay {
+    @keyframes darkroomExcitation {
       0% {
-        filter: drop-shadow(0 0 30px #00e5ff) brightness(1.4);
+        filter: brightness(1.35) contrast(1.15);
       }
-      30% {
-        filter: drop-shadow(0 0 20px #00e5ff) brightness(1.2);
+      40% {
+        filter: brightness(1.15) contrast(1.1);
       }
       100% {
-        filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.6)) brightness(0.95);
+        filter: brightness(1.0) contrast(1.05);
       }
     }
 
     body.lume-mode .watch-thumb-img {
-      animation: phosphorescentDecay 2.5s ease-out forwards;
+      animation: darkroomExcitation 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .lume-chemistry-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      z-index: 3;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.25rem 0.55rem;
+      border-radius: 4px;
+      backdrop-filter: blur(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      letter-spacing: 0.02em;
     }
 
     /* Sunburst Metallic Dial Sheen on Card Hover */
