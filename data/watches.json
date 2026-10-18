@@ -298,7 +298,7 @@
   {
     "id": "tandorio-36mm-flieger",
     "brand": "Tandorio",
-    "model": "36mm Sterile Pilot Type A",
+    "model": "36mm Flieger Pilot Type B (Baumuster B)",
     "archetype": "Aviation / Pilot",
     "movement": "Seiko NH35 Automatic",
     "case_diameter_mm": 36.0,
@@ -315,11 +315,11 @@
     "choice_price_eur": 55.0,
     "singles_day_price_eur": 47.0,
     "wrist_fit_tier": "Exceptional (< 46.5 mm L2L)",
-    "wrist_notes": "45 mm lug-to-lug makes this one of the most comfortable automatic pilot watches in existence for 15 cm wrists.",
+    "wrist_notes": "45 mm lug-to-lug makes this historical Type B navigator dial exceptionally balanced on 15 cm to 17 cm wrists.",
     "pros": [
-      "True 36 mm case proportions faithful to historic mid-century flight watches",
+      "Iconic Type B (Baumuster B) navigator layout with outer minutes track and inner hour circle",
       "Clean sterile dial option without annoying brand text or logos",
-      "Impressive 200 m water resistance with screw-down crown"
+      "Impressive 200 m water resistance with screw-down crown and sapphire crystal"
     ],
     "cons": [
       "Dial printing can feel slightly utilitarian",
@@ -328,8 +328,8 @@
     "jomw_quote": "A 36 millimeter pilot watch with an automatic NH35 and sapphire for under fifty quid. What a little gem.",
     "jomw_spec_score": 9.2,
     "image": "assets/images/tandorio-36mm-flieger.jpg",
-    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+36mm+Sterile+Pilot+Type+A",
-    "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+36mm+Sterile+Pilot+Type+A",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+36mm+Flieger+Type+B+Pilot+NH35",
+    "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+36mm+Flieger+Type+B+Pilot+NH35",
     "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M"
   },
   {
