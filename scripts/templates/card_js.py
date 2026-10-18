@@ -32,6 +32,69 @@ CARD_JS = """
       return (circumferenceCm * 10 * 0.285).toFixed(1);
     }
 
+    // Dynamic Phosphorescent Chemistry Badge Helper
+    function getLumeBadge(w) {
+      const l = (w.lume || '').toLowerCase();
+      if (l.includes('dual') || (l.includes('bgw9') && l.includes('c3'))) {
+        return {
+          label: 'Dual BGW9 & C3',
+          color: 'var(--lume-bgw9)',
+          bg: 'rgba(0, 229, 255, 0.16)',
+          border: 'rgba(0, 229, 255, 0.45)',
+          glow: 'rgba(0, 229, 255, 0.3)',
+          icon: 'fa-solid fa-bolt'
+        };
+      }
+      if (l.includes('bgw9')) {
+        return {
+          label: 'BGW9 Super-LumiNova',
+          color: 'var(--lume-bgw9)',
+          bg: 'rgba(0, 229, 255, 0.16)',
+          border: 'rgba(0, 229, 255, 0.45)',
+          glow: 'rgba(0, 229, 255, 0.3)',
+          icon: 'fa-solid fa-moon'
+        };
+      }
+      if (l.includes('electro') || l.includes('backlight') || l.includes('illuminator')) {
+        return {
+          label: 'ElectroLuminescence',
+          color: '#26d0ce',
+          bg: 'rgba(38, 208, 206, 0.18)',
+          border: 'rgba(38, 208, 206, 0.5)',
+          glow: 'rgba(38, 208, 206, 0.35)',
+          icon: 'fa-solid fa-lightbulb'
+        };
+      }
+      if (l.includes('neobrite')) {
+        return {
+          label: 'Casio Neobrite',
+          color: '#90ee90',
+          bg: 'rgba(144, 238, 144, 0.16)',
+          border: 'rgba(144, 238, 144, 0.45)',
+          glow: 'rgba(144, 238, 144, 0.25)',
+          icon: 'fa-solid fa-sun'
+        };
+      }
+      if (l.includes('none') || l.includes('formal') || l.includes('zero') || l.includes('vintage watch layout') || l.includes('breguet')) {
+        return {
+          label: 'Zero Lume (Pure Dress)',
+          color: 'var(--ctp-subtext0)',
+          bg: 'rgba(255, 255, 255, 0.06)',
+          border: 'rgba(255, 255, 255, 0.18)',
+          glow: 'transparent',
+          icon: 'fa-regular fa-eye-slash'
+        };
+      }
+      return {
+        label: 'C3 Super-LumiNova',
+        color: 'var(--lume-c3)',
+        bg: 'rgba(57, 255, 20, 0.16)',
+        border: 'rgba(57, 255, 20, 0.45)',
+        glow: 'rgba(57, 255, 20, 0.3)',
+        icon: 'fa-solid fa-radiation'
+      };
+    }
+
     // 365nm UV Torch Excitation Strobe for Lume Mode (Zero Party Confetti)
     let lumeActive = false;
     lumeToggleBtn.addEventListener('click', () => {
@@ -53,6 +116,25 @@ CARD_JS = """
         lumeBtnText.textContent = 'Lume Darkroom: OFF';
         lumeBtnText.style.color = '';
       }
+
+      // Smoothly crossfade all watch thumbnail images between day and darkroom lume
+      const allThumbs = document.querySelectorAll('.watch-thumb-img');
+      allThumbs.forEach(img => {
+        const targetSrc = lumeActive ? img.dataset.lumeSrc : img.dataset.daySrc;
+        if (targetSrc && img.getAttribute('src') !== targetSrc) {
+          img.style.opacity = '0';
+          setTimeout(() => {
+            img.setAttribute('src', targetSrc);
+            img.style.opacity = '1';
+          }, 180);
+        }
+      });
+
+      // Toggle dynamic phosphorescent chemistry badges
+      const allLumeBadges = document.querySelectorAll('.lume-chemistry-badge');
+      allLumeBadges.forEach(badge => {
+        badge.style.display = lumeActive ? 'inline-flex' : 'none';
+      });
     });
 
     // Wrist Caliper Slider Listener
@@ -236,12 +318,15 @@ CARD_JS = """
           </div>
         ` : '';
 
+        const currentImgSrc = lumeActive ? (w.lume_image || w.image) : w.image;
+        const lumeBadge = getLumeBadge(w);
+
         return `
           <article class="atelier-card watch-card" style="display: flex; flex-direction: column; justify-content: space-between; position: relative;">
             <div>
               <!-- Image & Top Header with Dynamic Sunburst Sheen -->
               <div class="watch-card-media" style="margin: -1.25rem -1.25rem 1rem -1.25rem; border-top-left-radius: var(--radius-lg); border-top-right-radius: var(--radius-lg);">
-                <img src="${w.image}" alt="${w.brand} ${w.model}" class="watch-thumb-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                <img src="${currentImgSrc}" data-day-src="${w.image}" data-lume-src="${w.lume_image || w.image}" alt="${w.brand} ${w.model}" class="watch-thumb-img" loading="lazy">
                 
                 <div style="position: absolute; top: 0.75rem; left: 0.75rem; display: flex; gap: 0.4rem; flex-wrap: wrap; z-index: 2;">
                   <span style="background: rgba(17, 17, 27, 0.88); backdrop-filter: blur(6px); border: 1px solid var(--gold-border); color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.55rem; border-radius: 4px; text-transform: uppercase;">
@@ -256,6 +341,11 @@ CARD_JS = """
                   <div style="font-size: 0.55rem; font-family: var(--font-mono); color: var(--gold-primary); text-transform: uppercase; font-weight: 700;">JOMW</div>
                   <div style="font-size: 1rem; font-family: var(--font-mono); font-weight: 800; color: #fff;">${w.jomw_spec_score}</div>
                 </div>
+
+                <span class="lume-chemistry-badge" style="display: ${lumeActive ? 'inline-flex' : 'none'}; background: ${lumeBadge.bg}; color: ${lumeBadge.color}; border: 1px solid ${lumeBadge.border}; box-shadow: 0 0 12px ${lumeBadge.glow};">
+                  <i class="${lumeBadge.icon}"></i>
+                  <span>${lumeBadge.label}</span>
+                </span>
               </div>
 
               <!-- Title & Model -->

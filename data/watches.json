@@ -34,7 +34,8 @@
     "image": "assets/images/addiesdive-ad2030.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Addiesdive+AD2030+Sand+Wave",
     "buy_url_alt": "https://www.amazon.de/s?k=Addiesdive+AD2030+Sand+Wave",
-    "jomw_video_url": "https://www.youtube.com/watch?v=gTOMtEniqvI"
+    "jomw_video_url": "https://www.youtube.com/watch?v=gTOMtEniqvI",
+    "lume_image": "assets/images/addiesdive-ad2030-lume.jpg"
   },
   {
     "id": "steeldive-sd1970",
@@ -71,7 +72,8 @@
     "image": "assets/images/steeldive-sd1970.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Steeldive+SD1970+Captain+Willard",
     "buy_url_alt": "https://www.amazon.de/s?k=Steeldive+SD1970+Captain+Willard",
-    "jomw_video_url": "https://www.youtube.com/watch?v=FQ56LKtcOxY"
+    "jomw_video_url": "https://www.youtube.com/watch?v=FQ56LKtcOxY",
+    "lume_image": "assets/images/steeldive-sd1970-lume.jpg"
   },
   {
     "id": "steeldive-sd1953",
@@ -108,7 +110,8 @@
     "image": "assets/images/steeldive-sd1953.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Steeldive+SD1953+Submariner+Classic",
     "buy_url_alt": "https://www.amazon.de/s?k=Steeldive+SD1953+Submariner+Classic",
-    "jomw_video_url": "https://www.youtube.com/watch?v=ueCZPHngzzw"
+    "jomw_video_url": "https://www.youtube.com/watch?v=ueCZPHngzzw",
+    "lume_image": "assets/images/steeldive-sd1953-lume.jpg"
   },
   {
     "id": "escapement-time-35mm-ks",
@@ -145,7 +148,8 @@
     "image": "assets/images/escapement-time-35mm-ks.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Escapement+Time+35mm+King+Elegance",
     "buy_url_alt": "https://www.amazon.de/s?k=Escapement+Time+35mm+King+Elegance",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/escapement-time-35mm-ks-lume.jpg"
   },
   {
     "id": "berny-t2566m-titanium",
@@ -182,7 +186,8 @@
     "image": "assets/images/berny-t2566m-titanium.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Berny+T2566M+Titanium+Field",
     "buy_url_alt": "https://www.amazon.de/s?k=Berny+T2566M+Titanium+Field",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/berny-t2566m-titanium-lume.jpg"
   },
   {
     "id": "militado-ml05-field",
@@ -219,7 +224,8 @@
     "image": "assets/images/militado-ml05-field.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Militado+ML05+Dirty+Dozen+Homage",
     "buy_url_alt": "https://www.amazon.de/s?k=Militado+ML05+Dirty+Dozen+Homage",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/militado-ml05-field-lume.jpg"
   },
   {
     "id": "pagani-design-pd1701",
@@ -256,7 +262,8 @@
     "image": "assets/images/pagani-design-pd1701.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Pagani+Design+PD-1701+Moonwatch+Homage",
     "buy_url_alt": "https://www.amazon.de/s?k=Pagani+Design+PD-1701+Moonwatch+Homage",
-    "jomw_video_url": "https://www.youtube.com/watch?v=IAwwjbyFKQI"
+    "jomw_video_url": "https://www.youtube.com/watch?v=IAwwjbyFKQI",
+    "lume_image": "assets/images/pagani-design-pd1701-lume.jpg"
   },
   {
     "id": "pagani-design-pd1644",
@@ -293,7 +300,8 @@
     "image": "assets/images/pagani-design-pd1644.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Pagani+Design+PD-1644+Daytona+Racing",
     "buy_url_alt": "https://www.amazon.de/s?k=Pagani+Design+PD-1644+Daytona+Racing",
-    "jomw_video_url": "https://www.youtube.com/watch?v=th4CAqjTE9M"
+    "jomw_video_url": "https://www.youtube.com/watch?v=th4CAqjTE9M",
+    "lume_image": "assets/images/pagani-design-pd1644-lume.jpg"
   },
   {
     "id": "tandorio-36mm-flieger-a",
@@ -330,7 +338,8 @@
     "image": "assets/images/tandorio-36mm-flieger-a.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+36mm+Pilot+Type+A+NH35",
     "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+36mm+Pilot+Type+A+NH35",
-    "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M"
+    "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M",
+    "lume_image": "assets/images/tandorio-36mm-flieger-a-lume.jpg"
   },
   {
     "id": "tandorio-36mm-flieger-b",
@@ -367,7 +376,8 @@
     "image": "assets/images/tandorio-36mm-flieger-b.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+36mm+Flieger+Type+B+Pilot+NH35",
     "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+36mm+Flieger+Type+B+Pilot+NH35",
-    "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M"
+    "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M",
+    "lume_image": "assets/images/tandorio-36mm-flieger-b-lume.jpg"
   },
   {
     "id": "tandorio-37mm-skx013",
@@ -404,7 +414,8 @@
     "image": "assets/images/tandorio-37mm-skx013.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Tandorio+37mm+SKX013+Diver+Homage",
     "buy_url_alt": "https://www.amazon.de/s?k=Tandorio+37mm+SKX013+Diver+Homage",
-    "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M"
+    "jomw_video_url": "https://www.youtube.com/watch?v=zXOoP-8md5M",
+    "lume_image": "assets/images/tandorio-37mm-skx013-lume.jpg"
   },
   {
     "id": "sanda-1108-tank",
@@ -441,7 +452,8 @@
     "image": "assets/images/sanda-1108-tank.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Sanda+1108+Tank+Louis+Homage",
     "buy_url_alt": "https://www.amazon.de/s?k=Sanda+1108+Tank+Louis+Homage",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/sanda-1108-tank-lume.jpg"
   },
   {
     "id": "casio-duro-mdv107",
@@ -478,7 +490,8 @@
     "image": "assets/images/casio-duro-mdv107.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+Duro+MDV-107+Marlin+Heritage",
     "buy_url_alt": "https://www.amazon.de/s?k=Casio+Duro+MDV-107+Marlin+Heritage",
-    "jomw_video_url": "https://www.youtube.com/watch?v=Ia71hpD-aSU"
+    "jomw_video_url": "https://www.youtube.com/watch?v=Ia71hpD-aSU",
+    "lume_image": "assets/images/casio-duro-mdv107-lume.jpg"
   },
   {
     "id": "casio-a168wa",
@@ -515,7 +528,8 @@
     "image": "assets/images/casio-a168wa.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+A168WA+Illuminator+Vintage",
     "buy_url_alt": "https://www.amazon.de/s?k=Casio+A168WA+Illuminator+Vintage",
-    "jomw_video_url": "https://www.youtube.com/watch?v=TBFhRmK0lYk"
+    "jomw_video_url": "https://www.youtube.com/watch?v=TBFhRmK0lYk",
+    "lume_image": "assets/images/casio-a168wa-lume.jpg"
   },
   {
     "id": "casio-ltp-v007l",
@@ -552,7 +566,8 @@
     "image": "assets/images/casio-ltp-v007l.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+LTP-V007L+Mini+Tank",
     "buy_url_alt": "https://www.amazon.de/s?k=Casio+LTP-V007L+Mini+Tank",
-    "jomw_video_url": "https://www.youtube.com/watch?v=bzjpN4qrK4Y"
+    "jomw_video_url": "https://www.youtube.com/watch?v=bzjpN4qrK4Y",
+    "lume_image": "assets/images/casio-ltp-v007l-lume.jpg"
   },
   {
     "id": "burei-classic-date",
@@ -589,7 +604,8 @@
     "image": "assets/images/burei-classic-date.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Burei+Minimalist+Date+Classic",
     "buy_url_alt": "https://www.amazon.de/s?k=Burei+Minimalist+Date+Classic",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/burei-classic-date-lume.jpg"
   },
   {
     "id": "merkur-pierre-paulin-sector",
@@ -626,7 +642,8 @@
     "image": "assets/images/merkur-pierre-paulin-sector.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Pierre+Paulin+Vintage+Sector+Salmon+Dial",
     "buy_url_alt": "https://www.amazon.de/s?k=Pierre+Paulin+Vintage+Sector+Salmon+Dial",
-    "jomw_video_url": "https://www.youtube.com/watch?v=mKqetfpyTRA"
+    "jomw_video_url": "https://www.youtube.com/watch?v=mKqetfpyTRA",
+    "lume_image": "assets/images/merkur-pierre-paulin-sector-lume.jpg"
   },
   {
     "id": "sugess-celestial-heritage",
@@ -663,7 +680,8 @@
     "image": "assets/images/sugess-celestial-heritage.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Sugess+Moonphase+Master+Heritage",
     "buy_url_alt": "https://www.amazon.de/s?k=Sugess+Moonphase+Master+Heritage",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/sugess-celestial-heritage-lume.jpg"
   },
   {
     "id": "lige-8936-racing-chrono",
@@ -700,7 +718,8 @@
     "image": "assets/images/lige-8936-racing-chrono.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Lige+8936+Phantom+Racing+Chrono",
     "buy_url_alt": "https://www.amazon.de/s?k=Lige+8936+Phantom+Racing+Chrono",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/lige-8936-racing-chrono-lume.jpg"
   },
   {
     "id": "addiesdive-ad2023-explorer",
@@ -737,7 +756,8 @@
     "image": "assets/images/addiesdive-ad2023-explorer.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Addiesdive+AD2023+Explorer+36",
     "buy_url_alt": "https://www.amazon.de/s?k=Addiesdive+AD2023+Explorer+36",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/addiesdive-ad2023-explorer-lume.jpg"
   },
   {
     "id": "addiesdive-ad2105-puck-diver",
@@ -774,6 +794,7 @@
     "image": "assets/images/addiesdive-ad2105-puck-diver.jpg",
     "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Addiesdive+AD2105+Deep+Puck+Diver",
     "buy_url_alt": "https://www.amazon.de/s?k=Addiesdive+AD2105+Deep+Puck+Diver",
-    "jomw_video_url": ""
+    "jomw_video_url": "",
+    "lume_image": "assets/images/addiesdive-ad2105-puck-diver-lume.jpg"
   }
 ]
