@@ -449,6 +449,90 @@
         padding: 1rem;
       }
     }
+
+    /* Floating Quick Actions Dock */
+    .floating-dock {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      align-items: flex-end;
+    }
+
+    .dock-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(17, 17, 27, 0.92);
+      backdrop-filter: blur(10px);
+      color: var(--ctp-text);
+      border: 1px solid var(--ctp-surface1);
+      padding: 0.6rem 1rem;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-height: 44px;
+      min-width: 44px;
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      user-select: none;
+      touch-action: manipulation;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    .dock-action-btn:hover {
+      border-color: var(--gold-border);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.7);
+    }
+
+    .dock-action-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Back to Top button scroll-visibility */
+    #back-to-top-btn {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+    }
+
+    #back-to-top-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Floating Lume Dock Active State */
+    body.lume-mode .dock-lume-btn {
+      background: rgba(17, 17, 27, 0.96);
+      border-color: rgba(0, 229, 255, 0.55);
+      color: var(--lume-bgw9);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+    }
+
+    /* Highlight Filter Bar Lume Button */
+    .lume-filter-btn {
+      min-height: 44px;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    body.lume-mode .lume-filter-btn {
+      background: rgba(0, 229, 255, 0.12) !important;
+      border-color: rgba(0, 229, 255, 0.5) !important;
+      color: var(--lume-bgw9) !important;
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.25);
+    }
   </style>
 </head>
 
@@ -496,19 +580,15 @@
 
         <!-- Quick actions with strict >=44px mobile touch targets -->
         <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; width: 100%;">
-          <button id="lume-toggle-btn" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600;">
-            <i class="fa-solid fa-moon" style="color: var(--lume-bgw9);"></i>
-            <span id="lume-btn-text">Lume Darkroom: OFF</span>
-          </button>
-          <a href="#escapement-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none;">
+          <a href="#escapement-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none; min-height: 44px; box-sizing: border-box;">
             <i class="fa-solid fa-gear"></i>
             <span>Beat Rate Lab</span>
           </a>
-          <a href="#caliper-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--gold-bg); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none;">
+          <a href="#caliper-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--gold-bg); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none; min-height: 44px; box-sizing: border-box;">
             <i class="fa-solid fa-ruler-horizontal"></i>
             <span>Caliper Lab</span>
           </a>
-          <a href="#care-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none;">
+          <a href="#care-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none; min-height: 44px; box-sizing: border-box;">
             <i class="fa-solid fa-screwdriver-wrench" style="color: var(--ctp-teal);"></i>
             <span>Care &amp; Workbench</span>
           </a>
@@ -700,7 +780,7 @@
         </div>
       </div>
 
-      <!-- Price Tiers Switch & Result Count -->
+      <!-- Price Tiers Switch, Lume Darkroom Switch & Result Count -->
       <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ctp-surface0); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
           <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-overlay1); text-transform: uppercase; margin-right: 0.25rem;">Pricing Benchmark:</span>
@@ -715,14 +795,34 @@
           </button>
         </div>
 
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ctp-subtext1);">
-          Showing <span id="visible-count" style="font-weight: 700; color: #fff;">21</span> of <span id="total-count">21</span> horological picks
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+          <!-- Prominent Filter-Bar Lume Darkroom Toggle Button -->
+          <button id="lume-toggle-btn" class="btn-tactile lume-filter-btn" type="button" aria-label="Toggle Lume Darkroom Mode" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.55rem 0.95rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;">
+            <i class="fa-solid fa-moon" style="color: var(--lume-bgw9);"></i>
+            <span id="lume-btn-text">Lume Darkroom: OFF</span>
+          </button>
+
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ctp-subtext1);">
+            Showing <span id="visible-count" style="font-weight: 700; color: #fff;">21</span> of <span id="total-count">21</span> horological picks
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Watch Grid -->
     <div id="watch-grid" class="watch-grid"></div>
+
+    <!-- Floating Action Dock: Quick Lume Darkroom & Back to Top -->
+    <aside class="floating-dock" id="floating-dock" aria-label="Quick Navigation and View Controls">
+      <button id="dock-lume-btn" class="dock-action-btn dock-lume-btn btn-tactile" type="button" aria-label="Toggle Lume Darkroom Mode" title="Toggle Lume Darkroom Mode">
+        <i class="fa-solid fa-moon" style="color: var(--lume-bgw9);"></i>
+        <span id="dock-lume-text">Lume Mode</span>
+      </button>
+      <button id="back-to-top-btn" class="dock-action-btn btn-tactile" type="button" aria-label="Scroll back to top" title="Scroll back to top">
+        <i class="fa-solid fa-arrow-up" style="color: var(--gold-primary);"></i>
+        <span>Top</span>
+      </button>
+    </aside>
 
     <!-- HOROLOGIST WORKBENCH & LONGEVITY PANELS -->
     <div class="chemin-de-fer"></div>
@@ -996,6 +1096,9 @@
     const priceTabs = document.querySelectorAll('.price-tab-btn');
     const lumeToggleBtn = document.getElementById('lume-toggle-btn');
     const lumeBtnText = document.getElementById('lume-btn-text');
+    const dockLumeBtn = document.getElementById('dock-lume-btn');
+    const dockLumeText = document.getElementById('dock-lume-text');
+    const backToTopBtn = document.getElementById('back-to-top-btn');
 
     let currentPriceMode = 'choice';
     let currentWristCirc = 16.5;
@@ -1073,13 +1176,14 @@
 
     // 365nm UV Torch Excitation Strobe for Lume Mode (Zero Party Confetti)
     let lumeActive = false;
-    lumeToggleBtn.addEventListener('click', () => {
+    function toggleLumeMode() {
       lumeActive = !lumeActive;
       document.body.classList.toggle('lume-mode', lumeActive);
       
       if (lumeActive) {
-        lumeBtnText.textContent = 'Lume Darkroom: ACTIVE';
-        lumeBtnText.style.color = 'var(--lume-bgw9)';
+        if (lumeBtnText) lumeBtnText.textContent = 'Lume Darkroom: ACTIVE';
+        if (dockLumeText) dockLumeText.textContent = 'Lume: ON';
+        if (dockLumeBtn) dockLumeBtn.classList.add('dock-lume-active');
         
         // Spawn 365nm UV beam sweep
         const uvBeam = document.createElement('div');
@@ -1089,8 +1193,9 @@
           if (uvBeam.parentNode) uvBeam.parentNode.removeChild(uvBeam);
         }, 900);
       } else {
-        lumeBtnText.textContent = 'Lume Darkroom: OFF';
-        lumeBtnText.style.color = '';
+        if (lumeBtnText) lumeBtnText.textContent = 'Lume Darkroom: OFF';
+        if (dockLumeText) dockLumeText.textContent = 'Lume Mode';
+        if (dockLumeBtn) dockLumeBtn.classList.remove('dock-lume-active');
       }
 
       // Smoothly crossfade all watch thumbnail images between day and darkroom lume
@@ -1111,7 +1216,25 @@
       allLumeBadges.forEach(badge => {
         badge.style.display = lumeActive ? 'inline-flex' : 'none';
       });
-    });
+    }
+
+    if (lumeToggleBtn) lumeToggleBtn.addEventListener('click', toggleLumeMode);
+    if (dockLumeBtn) dockLumeBtn.addEventListener('click', toggleLumeMode);
+
+    // Back to Top button scroll detection & smooth scroll
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
     // Wrist Caliper Slider Listener
     wristSlider.addEventListener('input', (e) => {

@@ -20,6 +20,9 @@ CARD_JS = """
     const priceTabs = document.querySelectorAll('.price-tab-btn');
     const lumeToggleBtn = document.getElementById('lume-toggle-btn');
     const lumeBtnText = document.getElementById('lume-btn-text');
+    const dockLumeBtn = document.getElementById('dock-lume-btn');
+    const dockLumeText = document.getElementById('dock-lume-text');
+    const backToTopBtn = document.getElementById('back-to-top-btn');
 
     let currentPriceMode = 'choice';
     let currentWristCirc = 16.5;
@@ -97,13 +100,14 @@ CARD_JS = """
 
     // 365nm UV Torch Excitation Strobe for Lume Mode (Zero Party Confetti)
     let lumeActive = false;
-    lumeToggleBtn.addEventListener('click', () => {
+    function toggleLumeMode() {
       lumeActive = !lumeActive;
       document.body.classList.toggle('lume-mode', lumeActive);
       
       if (lumeActive) {
-        lumeBtnText.textContent = 'Lume Darkroom: ACTIVE';
-        lumeBtnText.style.color = 'var(--lume-bgw9)';
+        if (lumeBtnText) lumeBtnText.textContent = 'Lume Darkroom: ACTIVE';
+        if (dockLumeText) dockLumeText.textContent = 'Lume: ON';
+        if (dockLumeBtn) dockLumeBtn.classList.add('dock-lume-active');
         
         // Spawn 365nm UV beam sweep
         const uvBeam = document.createElement('div');
@@ -113,8 +117,9 @@ CARD_JS = """
           if (uvBeam.parentNode) uvBeam.parentNode.removeChild(uvBeam);
         }, 900);
       } else {
-        lumeBtnText.textContent = 'Lume Darkroom: OFF';
-        lumeBtnText.style.color = '';
+        if (lumeBtnText) lumeBtnText.textContent = 'Lume Darkroom: OFF';
+        if (dockLumeText) dockLumeText.textContent = 'Lume Mode';
+        if (dockLumeBtn) dockLumeBtn.classList.remove('dock-lume-active');
       }
 
       // Smoothly crossfade all watch thumbnail images between day and darkroom lume
@@ -135,7 +140,25 @@ CARD_JS = """
       allLumeBadges.forEach(badge => {
         badge.style.display = lumeActive ? 'inline-flex' : 'none';
       });
-    });
+    }
+
+    if (lumeToggleBtn) lumeToggleBtn.addEventListener('click', toggleLumeMode);
+    if (dockLumeBtn) dockLumeBtn.addEventListener('click', toggleLumeMode);
+
+    // Back to Top button scroll detection & smooth scroll
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add('visible');
+        } else {
+          backToTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
     // Wrist Caliper Slider Listener
     wristSlider.addEventListener('input', (e) => {
