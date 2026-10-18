@@ -46,19 +46,15 @@ NAV_HEADER_HTML = """
 
         <!-- Quick actions with strict >=44px mobile touch targets -->
         <div style="display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; width: 100%;">
-          <button id="lume-toggle-btn" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600;">
-            <i class="fa-solid fa-moon" style="color: var(--lume-bgw9);"></i>
-            <span id="lume-btn-text">Lume Darkroom: OFF</span>
-          </button>
-          <a href="#escapement-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none;">
+          <a href="#escapement-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none; min-height: 44px; box-sizing: border-box;">
             <i class="fa-solid fa-gear"></i>
             <span>Beat Rate Lab</span>
           </a>
-          <a href="#caliper-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--gold-bg); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none;">
+          <a href="#caliper-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--gold-bg); color: var(--gold-primary); border: 1px solid var(--gold-border); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none; min-height: 44px; box-sizing: border-box;">
             <i class="fa-solid fa-ruler-horizontal"></i>
             <span>Caliper Lab</span>
           </a>
-          <a href="#care-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none;">
+          <a href="#care-lab" class="btn-tactile" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.6rem 1rem; border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.825rem; font-weight: 600; text-decoration: none; min-height: 44px; box-sizing: border-box;">
             <i class="fa-solid fa-screwdriver-wrench" style="color: var(--ctp-teal);"></i>
             <span>Care &amp; Workbench</span>
           </a>
@@ -250,7 +246,7 @@ NAV_HEADER_HTML = """
         </div>
       </div>
 
-      <!-- Price Tiers Switch & Result Count -->
+      <!-- Price Tiers Switch, Lume Darkroom Switch & Result Count -->
       <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ctp-surface0); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
           <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--ctp-overlay1); text-transform: uppercase; margin-right: 0.25rem;">Pricing Benchmark:</span>
@@ -265,12 +261,32 @@ NAV_HEADER_HTML = """
           </button>
         </div>
 
-        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ctp-subtext1);">
-          Showing <span id="visible-count" style="font-weight: 700; color: #fff;">21</span> of <span id="total-count">21</span> horological picks
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+          <!-- Prominent Filter-Bar Lume Darkroom Toggle Button -->
+          <button id="lume-toggle-btn" class="btn-tactile lume-filter-btn" type="button" aria-label="Toggle Lume Darkroom Mode" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--ctp-surface0); color: var(--ctp-text); border: 1px solid var(--ctp-surface1); padding: 0.55rem 0.95rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700;">
+            <i class="fa-solid fa-moon" style="color: var(--lume-bgw9);"></i>
+            <span id="lume-btn-text">Lume Darkroom: OFF</span>
+          </button>
+
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ctp-subtext1);">
+            Showing <span id="visible-count" style="font-weight: 700; color: #fff;">21</span> of <span id="total-count">21</span> horological picks
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Watch Grid -->
     <div id="watch-grid" class="watch-grid"></div>
+
+    <!-- Floating Action Dock: Quick Lume Darkroom & Back to Top -->
+    <aside class="floating-dock" id="floating-dock" aria-label="Quick Navigation and View Controls">
+      <button id="dock-lume-btn" class="dock-action-btn dock-lume-btn btn-tactile" type="button" aria-label="Toggle Lume Darkroom Mode" title="Toggle Lume Darkroom Mode">
+        <i class="fa-solid fa-moon" style="color: var(--lume-bgw9);"></i>
+        <span id="dock-lume-text">Lume Mode</span>
+      </button>
+      <button id="back-to-top-btn" class="dock-action-btn btn-tactile" type="button" aria-label="Scroll back to top" title="Scroll back to top">
+        <i class="fa-solid fa-arrow-up" style="color: var(--gold-primary);"></i>
+        <span>Top</span>
+      </button>
+    </aside>
 """

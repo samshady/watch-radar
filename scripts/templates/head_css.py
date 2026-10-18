@@ -452,6 +452,90 @@ HEAD_CSS = """<!DOCTYPE html>
         padding: 1rem;
       }
     }
+
+    /* Floating Quick Actions Dock */
+    .floating-dock {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      align-items: flex-end;
+    }
+
+    .dock-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: rgba(17, 17, 27, 0.92);
+      backdrop-filter: blur(10px);
+      color: var(--ctp-text);
+      border: 1px solid var(--ctp-surface1);
+      padding: 0.6rem 1rem;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-height: 44px;
+      min-width: 44px;
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      user-select: none;
+      touch-action: manipulation;
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    .dock-action-btn:hover {
+      border-color: var(--gold-border);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.7);
+    }
+
+    .dock-action-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Back to Top button scroll-visibility */
+    #back-to-top-btn {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(14px);
+    }
+
+    #back-to-top-btn.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Floating Lume Dock Active State */
+    body.lume-mode .dock-lume-btn {
+      background: rgba(17, 17, 27, 0.96);
+      border-color: rgba(0, 229, 255, 0.55);
+      color: var(--lume-bgw9);
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+    }
+
+    /* Highlight Filter Bar Lume Button */
+    .lume-filter-btn {
+      min-height: 44px;
+      cursor: pointer;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    body.lume-mode .lume-filter-btn {
+      background: rgba(0, 229, 255, 0.12) !important;
+      border-color: rgba(0, 229, 255, 0.5) !important;
+      color: var(--lume-bgw9) !important;
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.25);
+    }
   </style>
 </head>
 """
