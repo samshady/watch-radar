@@ -274,7 +274,12 @@ CARD_JS = """
 
       const filtered = WATCH_DATA.filter(w => {
         if (w.lug_to_lug_mm > maxL2L) return false;
-        if (archetype !== 'all' && !w.archetype.includes(archetype)) return false;
+        if (archetype !== 'all') {
+          const archLower = archetype.toLowerCase();
+          const wArchLower = w.archetype.toLowerCase();
+          const isDiverMatch = (archLower === 'diver' || archLower === 'dive') && wArchLower.includes('dive');
+          if (!wArchLower.includes(archLower) && !isDiverMatch) return false;
+        }
         if (movement !== 'all' && !w.movement.includes(movement)) return false;
         if (query) {
           const haystack = `${w.brand} ${w.model} ${w.archetype} ${w.movement} ${w.crystal} ${w.wrist_notes}`.toLowerCase();

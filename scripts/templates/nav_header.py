@@ -269,7 +269,7 @@ NAV_HEADER_HTML = """
           </button>
 
           <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--ctp-subtext1);">
-            Showing <span id="visible-count" style="font-weight: 700; color: #fff;">21</span> of <span id="total-count">21</span> horological picks
+            Showing <span id="visible-count" style="font-weight: 700; color: #fff;">25</span> of <span id="total-count">25</span> horological picks
           </div>
         </div>
       </div>
