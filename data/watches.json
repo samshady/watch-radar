@@ -1062,5 +1062,43 @@
     "buy_url_alt": "https://www.amazon.de/s?k=Skmei+1816",
     "jomw_video_url": "",
     "lume_image": "assets/images/skmei-1816-casioak-lume.jpg"
+  },
+  {
+    "id": "casio-g-shock-dw-5600e",
+    "brand": "Casio G-Shock",
+    "model": "DW-5600E Origin Square",
+    "archetype": "Digital / Retro Shock",
+    "movement": "Casio Digital Module 3229 (EL Backlight)",
+    "case_diameter_mm": 42.8,
+    "lug_to_lug_mm": 46.8,
+    "thickness_mm": 13.4,
+    "lug_width_mm": 16,
+    "crystal": "Mineral Glass (Recessed Protective Bezel)",
+    "bezel": "Shock-resistant resin square bezel",
+    "water_resistance_m": 200,
+    "endlinks": "Flexible resin strap pivoting straight down",
+    "clasp": "Stainless steel pin buckle",
+    "lume": "Electro-Luminescent (EL) cyan backlight with afterglow (500nm)",
+    "street_price_eur": 58,
+    "choice_price_eur": 49,
+    "singles_day_price_eur": 42,
+    "wrist_fit_tier": "Exceptional (< 46.5 mm L2L)",
+    "wrist_notes": "The strap hinges straight down at the springbar with zero outward flare, making it wear comfortably on wrists down to 14.5 cm.",
+    "pros": [
+      "The iconic NASA flight-certified indestructible G-Shock square pedigree",
+      "Strap drops straight down without flare, eliminating overhang on small wrists",
+      "200m water resistance, shock protection, and high-contrast EL cyan illuminator"
+    ],
+    "cons": [
+      "Top-left adjust button is intentionally deeply recessed to prevent accidental press",
+      "13.4 mm resin height sits taller under snug dress cuffs"
+    ],
+    "jomw_quote": "The DW-5600 is the undisputed king of no-nonsense digital beaters. You could run it over with a tractor and it would not care.",
+    "jomw_spec_score": 9.6,
+    "image": "assets/images/casio-g-shock-dw-5600e.jpg",
+    "buy_url_aliexpress": "https://www.aliexpress.com/wholesale?SearchText=Casio+G-Shock+DW-5600E",
+    "buy_url_alt": "https://www.amazon.de/s?k=Casio+DW-5600E",
+    "jomw_video_url": "",
+    "lume_image": "assets/images/casio-g-shock-dw-5600e-lume.jpg"
   }
 ]
