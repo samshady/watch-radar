@@ -305,14 +305,42 @@ CARD_JS = """
       }
 
       watchGrid.innerHTML = filtered.map(w => {
+        const isCasio = (w.brand || '').toLowerCase().includes('casio');
+
         let displayPrice = w.choice_price_eur;
         let priceLabel = 'Ali Choice';
-        if (currentPriceMode === 'singles') {
+        if (isCasio) {
+          // For Casio, domestic German retail (Amazon.de Prime) is the primary recommendation
+          displayPrice = w.street_price_eur;
+          priceLabel = 'Amazon Prime';
+        } else if (currentPriceMode === 'singles') {
           displayPrice = w.singles_day_price_eur;
           priceLabel = '11.11 Lowest';
         } else if (currentPriceMode === 'street') {
           displayPrice = w.street_price_eur;
           priceLabel = 'Retail';
+        }
+
+        let altStoreName = 'Amazon.de';
+        let altStoreIcon = 'fa-brands fa-amazon';
+        if (w.buy_url_alt.includes('watchdives')) {
+          altStoreName = 'Watchdives';
+          altStoreIcon = 'fa-solid fa-store';
+        } else if (w.buy_url_alt.includes('sugess')) {
+          altStoreName = 'Sugess Direct';
+          altStoreIcon = 'fa-solid fa-gem';
+        } else if (w.buy_url_alt.includes('steeldive')) {
+          altStoreName = 'Steeldive';
+          altStoreIcon = 'fa-solid fa-anchor';
+        } else if (w.buy_url_alt.includes('paganidesign')) {
+          altStoreName = 'Pagani Direct';
+          altStoreIcon = 'fa-solid fa-gauge-high';
+        } else if (w.buy_url_alt.includes('berny')) {
+          altStoreName = 'Berny Direct';
+          altStoreIcon = 'fa-solid fa-compass';
+        } else if (w.buy_url_alt.includes('merkur')) {
+          altStoreName = 'Merkur Direct';
+          altStoreIcon = 'fa-solid fa-clock';
         }
 
         // Dynamic wrist fit evaluation
@@ -363,6 +391,11 @@ CARD_JS = """
                   <span style="background: rgba(17, 17, 27, 0.88); backdrop-filter: blur(6px); border: 1px solid var(--ctp-surface1); color: var(--ctp-subtext1); font-family: var(--font-mono); font-size: 0.7rem; padding: 0.25rem 0.55rem; border-radius: 4px;">
                     ${w.archetype}
                   </span>
+                  ${isCasio ? `
+                    <span style="background: rgba(255, 153, 0, 0.22); backdrop-filter: blur(6px); border: 1px solid rgba(255, 153, 0, 0.55); color: #ffb84d; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 4px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                      <i class="fa-brands fa-amazon"></i> Prime DE First
+                    </span>
+                  ` : ''}
                 </div>
 
                 <div style="position: absolute; top: 0.75rem; right: 0.75rem; background: rgba(17, 17, 27, 0.92); backdrop-filter: blur(6px); border: 1px solid var(--gold-border); border-radius: 8px; padding: 0.3rem 0.6rem; text-align: center; z-index: 2;">
@@ -465,22 +498,33 @@ CARD_JS = """
                   </div>
                 </div>
                 <div style="display: flex; gap: 0.35rem; font-family: var(--font-mono); font-size: 0.7rem;">
-                  <span style="background: var(--ctp-surface0); padding: 0.2rem 0.4rem; border-radius: 4px; color: var(--ctp-subtext0);" title="Standard Retail">&euro;${w.street_price_eur.toFixed(0)}</span>
-                  <span style="background: var(--gold-bg); border: 1px solid var(--gold-border); padding: 0.2rem 0.4rem; border-radius: 4px; color: var(--gold-primary);" title="AliExpress Choice">&euro;${w.choice_price_eur.toFixed(0)}</span>
+                  <span style="background: ${isCasio ? 'var(--gold-bg)' : 'var(--ctp-surface0)'}; border: ${isCasio ? '1px solid var(--gold-border)' : 'none'}; padding: 0.2rem 0.4rem; border-radius: 4px; color: ${isCasio ? 'var(--gold-primary)' : 'var(--ctp-subtext0)'};" title="Amazon.de Retail">&euro;${w.street_price_eur.toFixed(0)}</span>
+                  <span style="background: ${!isCasio ? 'var(--gold-bg)' : 'var(--ctp-surface0)'}; border: ${!isCasio ? '1px solid var(--gold-border)' : 'none'}; padding: 0.2rem 0.4rem; border-radius: 4px; color: ${!isCasio ? 'var(--gold-primary)' : 'var(--ctp-subtext0)'};" title="AliExpress Choice">&euro;${w.choice_price_eur.toFixed(0)}</span>
                   <span style="background: rgba(250, 179, 135, 0.1); border: 1px solid rgba(250, 179, 135, 0.3); padding: 0.2rem 0.4rem; border-radius: 4px; color: var(--ctp-peach);" title="11.11 Lowest">&euro;${w.singles_day_price_eur.toFixed(0)}</span>
                 </div>
               </div>
 
               <!-- Buy Action Buttons with >=44px Touch Targets -->
               <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 0.5rem;">
-                <a href="${w.buy_url_aliexpress}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--gold-primary); color: #11111b; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--gold-hover); min-height: 44px; box-sizing: border-box;">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                  <span>Ali Choice</span>
-                </a>
-                <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1); min-height: 44px; box-sizing: border-box;" title="Shop on ${w.buy_url_alt.includes('watchdives') ? 'Watchdives' : w.buy_url_alt.includes('sugess') ? 'Sugess Official' : w.buy_url_alt.includes('steeldive') ? 'Steeldive Official' : w.buy_url_alt.includes('paganidesign') ? 'Pagani Design' : w.buy_url_alt.includes('berny') ? 'Berny Official' : w.buy_url_alt.includes('merkur') ? 'Merkur Official' : 'Amazon.de'}">
-                  <i class="${w.buy_url_alt.includes('watchdives') ? 'fa-solid fa-store' : w.buy_url_alt.includes('sugess') ? 'fa-solid fa-gem' : w.buy_url_alt.includes('steeldive') ? 'fa-solid fa-anchor' : w.buy_url_alt.includes('paganidesign') ? 'fa-solid fa-gauge-high' : w.buy_url_alt.includes('berny') ? 'fa-solid fa-compass' : w.buy_url_alt.includes('merkur') ? 'fa-solid fa-clock' : 'fa-brands fa-amazon'}"></i>
-                  <span>${w.buy_url_alt.includes('watchdives') ? 'Watchdives' : w.buy_url_alt.includes('sugess') ? 'Sugess Direct' : w.buy_url_alt.includes('steeldive') ? 'Steeldive' : w.buy_url_alt.includes('paganidesign') ? 'Pagani Direct' : w.buy_url_alt.includes('berny') ? 'Berny Direct' : w.buy_url_alt.includes('merkur') ? 'Merkur Direct' : 'Amazon.de'}</span>
-                </a>
+                ${isCasio ? `
+                  <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--gold-primary); color: #11111b; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--gold-hover); min-height: 44px; box-sizing: border-box;" title="Buy on Amazon.de with Prime Next-Day Delivery and Official German Warranty">
+                    <i class="fa-brands fa-amazon" style="font-size: 1rem;"></i>
+                    <span>Amazon Prime</span>
+                  </a>
+                  <a href="${w.buy_url_aliexpress}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1); min-height: 44px; box-sizing: border-box;" title="Check AliExpress Pricing (Note: Slower import and replica risk)">
+                    <i class="fa-solid fa-cart-shopping" style="font-size: 0.85rem;"></i>
+                    <span>AliExpress</span>
+                  </a>
+                ` : `
+                  <a href="${w.buy_url_aliexpress}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--gold-primary); color: #11111b; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--gold-hover); min-height: 44px; box-sizing: border-box;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Ali Choice</span>
+                  </a>
+                  <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1); min-height: 44px; box-sizing: border-box;" title="Shop on ${altStoreName}">
+                    <i class="${altStoreIcon}"></i>
+                    <span>${altStoreName}</span>
+                  </a>
+                `}
               </div>
             </div>
           </article>
