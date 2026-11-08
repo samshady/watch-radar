@@ -477,9 +477,9 @@ CARD_JS = """
                   <i class="fa-solid fa-cart-shopping"></i>
                   <span>Ali Choice</span>
                 </a>
-                <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1); min-height: 44px; box-sizing: border-box;">
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  <span>Amazon/Alt</span>
+                <a href="${w.buy_url_alt}" target="_blank" rel="noopener noreferrer" class="btn-tactile" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; background: var(--ctp-surface0); color: var(--ctp-text); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; padding: 0.65rem 0.5rem; border-radius: var(--radius-sm); text-decoration: none; border: 1px solid var(--ctp-surface1); min-height: 44px; box-sizing: border-box;" title="Shop on ${w.buy_url_alt.includes('watchdives') ? 'Watchdives' : w.buy_url_alt.includes('sugess') ? 'Sugess Official' : w.buy_url_alt.includes('steeldive') ? 'Steeldive Official' : w.buy_url_alt.includes('paganidesign') ? 'Pagani Design' : w.buy_url_alt.includes('berny') ? 'Berny Official' : w.buy_url_alt.includes('merkur') ? 'Merkur Official' : 'Amazon.de'}">
+                  <i class="${w.buy_url_alt.includes('watchdives') ? 'fa-solid fa-store' : w.buy_url_alt.includes('sugess') ? 'fa-solid fa-gem' : w.buy_url_alt.includes('steeldive') ? 'fa-solid fa-anchor' : w.buy_url_alt.includes('paganidesign') ? 'fa-solid fa-gauge-high' : w.buy_url_alt.includes('berny') ? 'fa-solid fa-compass' : w.buy_url_alt.includes('merkur') ? 'fa-solid fa-clock' : 'fa-brands fa-amazon'}"></i>
+                  <span>${w.buy_url_alt.includes('watchdives') ? 'Watchdives' : w.buy_url_alt.includes('sugess') ? 'Sugess Direct' : w.buy_url_alt.includes('steeldive') ? 'Steeldive' : w.buy_url_alt.includes('paganidesign') ? 'Pagani Direct' : w.buy_url_alt.includes('berny') ? 'Berny Direct' : w.buy_url_alt.includes('merkur') ? 'Merkur Direct' : 'Amazon.de'}</span>
                 </a>
               </div>
             </div>
